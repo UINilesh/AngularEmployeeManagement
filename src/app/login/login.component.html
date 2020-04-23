@@ -1,0 +1,61 @@
+<div class="container">
+  
+  <div class="row">
+     
+    <div class="col-md-4 col-md-offset-4">
+        <h2 class="text-center bg-info">Login</h2>
+  
+      <div class="jumbotron">
+        <form
+          [formGroup]="angForm"
+          (ngSubmit)="postdata(angForm)"
+          autocomplete="off"
+        >
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              formControlName="email"
+              autocomplete="off"
+              class="form-control input-sm"
+              placeholder="Email"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            />
+
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">
+                Please Enter Proper Email Address
+              </div>
+              <div *ngIf="f.email.errors.email">
+                Please Enter Proper Email Address
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Password">Password</label>
+            <input
+              type="password"
+              name="Password"
+              formControlName="password"
+              autocomplete="off"
+              class="form-control input-sm"
+              placeholder="Password"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+            />
+            <div
+              *ngIf="submitted && f.password.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.password.errors.required">Password is required</div>
+               
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success">Login</button>  <a routerLink="../register">Register</a>
+        </form>
+      </div>
+     
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+</div>

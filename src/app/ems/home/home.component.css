@@ -1,0 +1,7 @@
+.btn, .btn-info, .btn-success,.btn-danger{
+    width:75px;
+    margin-left: 7px;
+}
+.dashboard {
+    padding-bottom: 50px;
+}
