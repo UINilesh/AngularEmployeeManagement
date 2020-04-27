@@ -4,11 +4,11 @@ export class Users {
     public pwd:string;
     public email:string;
 
-        constructor(Id:number,name: string,pwd:string,email:string) {
+    constructor(Id:number,name: string,pwd:string,email:string) {
         this.Id = Id;
         this.name = name;
         this.pwd = pwd;
         this.email = email;
-        }
     }
+}
     

@@ -14,7 +14,7 @@ import {FormGroup, FormBuilder, Validators, NgForm} from '@angular/forms';
 
 export class LoginComponent implements OnInit {
 
-
+  displayname:any;
    angForm: FormGroup;
    submitted = false;
 
@@ -27,6 +27,7 @@ constructor(private fb: FormBuilder,private dataService: ApiService,private rout
       email: ['', [Validators.required,Validators.minLength(1), Validators.email]],
       password: ['', Validators.required]
       });
+      
   }  
 
    // convenience getter for easy access to form fields
@@ -44,7 +45,10 @@ postdata(angForm1)
    .subscribe(
    data => {
    const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/home';
-   this.router.navigate([redirect]);
+  // print user value in page
+   //this.displayname.angForm1.value.email;
+   //console.log(this.displayname.value.email);
+  this.router.navigate([redirect]);
 },
 error => {
 alert("User name or password is incorrect")

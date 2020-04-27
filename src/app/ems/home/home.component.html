@@ -1,17 +1,25 @@
 <app-navbar></app-navbar>
 <div class="dashboard">
+<div class="container">
+  <div class="col-md-4 pull-right">
+    <input type="text" class="form-control" name="searchString"
+    placeholder="Search Name Here..." [(ngModel)]="searchString">
+   <p>You Typed -  {{searchString}}</p>
+    </div>
+</div>
+<br/>
   <div class="container">
     <table class="table table-bordered">
       <thead>
         <tr>
-          <td>Name</td>
-          <td>Position</td>
-          <td>Department</td>
-          <td width="275">Action</td>
+          <td class="bg-dark"><strong>Name</strong></td>
+          <td class="bg-dark"><strong>Position</strong></td>
+          <td class="bg-dark"><strong>Department</strong></td>
+          <td width="275"><strong>Action</strong></td>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of employees">
+        <tr *ngFor="let employee of employees | filter : 'name' : searchString; let i = index">
           <td>{{ employee.name }}</td>
           <td>{{ employee.position }}</td>
           <td>{{ employee.department }}</td>
@@ -27,6 +35,10 @@
             >
           </td>
         </tr>
+
+       
+
+         
       </tbody>
     </table>
   </div>

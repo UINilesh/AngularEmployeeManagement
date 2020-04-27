@@ -9,11 +9,10 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 })
 export class AddComponent implements OnInit {
 
-  constructor(
-    private empService: EmpService,
-     private router: Router) { }
+  constructor(private empService: EmpService, private router: Router) { }
 
   ngOnInit() {
+
   }
 
 model = new Employee();

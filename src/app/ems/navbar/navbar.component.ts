@@ -9,12 +9,13 @@ import { ApiService } from "../../loginservice/auth.service";
 export class NavbarComponent implements OnInit {
   loginbtn: boolean;
   logoutbtn: boolean;
-
+displayname:any;
   constructor(private dataService: ApiService) {
     dataService.getLoggedInName.subscribe((name) => this.changeName(name));
 
     if (this.dataService.isLoggedIn()) {
       console.log("loggedin");
+       
       this.loginbtn = false;
       this.logoutbtn = true;
     } else {
@@ -33,5 +34,9 @@ export class NavbarComponent implements OnInit {
     window.location.href = window.location.href;
   }
 
-  ngOnInit() {}
+  ngOnInit() { 
+    // print name on admin page 
+    this.displayname = this.dataService.getToken();
+    console.log(this.dataService.getToken());
+  }
 }

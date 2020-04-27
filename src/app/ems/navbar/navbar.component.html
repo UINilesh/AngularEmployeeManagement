@@ -12,9 +12,12 @@
         <div id="navbar" class="collapse navbar-collapse">
 
           <ul class="nav navbar-nav navbar-right">
+            
             <li><a  [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
             <li><a [routerLink]="['/add']" routerLinkActive="active">Add Employee</a></li>
             <li><button type="button"  class="btn btn-block logoutBtn" (click)="logout()">logout</button></li>
+            <li style="margin-top:15px;margin-left:15px">Welcome <span style="color:#d9534f;font-weight: bold;">{{displayname}}</span></li>
+            
           </ul>
         </div><!--/.nav-collapse -->  
       </div>

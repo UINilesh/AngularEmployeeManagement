@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './ems/navbar/navbar.component';
 import { HomeComponent } from './ems/home/home.component';
@@ -17,9 +16,11 @@ import { ApiService } from './loginservice/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthguardGuard } from './guard/authguard.guard';
-import { LogoutComponent } from './logout/logout.component';
 import { FooterComponent } from './footer/footer.component'; 
  
+// search data filter 
+import { FilterPipe } from './searchdata/filter.pipe'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,8 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    LogoutComponent,
-    FooterComponent
+    FooterComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
