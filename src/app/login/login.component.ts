@@ -14,7 +14,7 @@ import {FormGroup, FormBuilder, Validators, NgForm} from '@angular/forms';
 
 export class LoginComponent implements OnInit {
 
-  displayname:any;
+   displayerrors = false;
    angForm: FormGroup;
    submitted = false;
 
@@ -51,7 +51,9 @@ postdata(angForm1)
   this.router.navigate([redirect]);
 },
 error => {
-alert("User name or password is incorrect")
+//alert("User name or password is incorrect")
+ this.displayerrors = true;
+ console.log(this.displayerrors=true);
 });
 }
  

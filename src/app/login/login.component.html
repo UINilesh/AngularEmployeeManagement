@@ -51,6 +51,9 @@
                
             </div>
           </div>
+          <div *ngIf="displayerrors == true" class="form-group invalid-feedback">
+              Username and Password is not Valid please try again!
+          </div>
           <button type="submit" class="btn btn-success">Login</button>  <a routerLink="../register">Register</a>
         </form>
       </div>

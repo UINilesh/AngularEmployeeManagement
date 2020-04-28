@@ -21,6 +21,11 @@ import { FooterComponent } from './footer/footer.component';
 // search data filter 
 import { FilterPipe } from './searchdata/filter.pipe'
 
+//bootstrap  date picker 
+ 
+ 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +47,7 @@ import { FilterPipe } from './searchdata/filter.pipe'
     HttpClientModule,
     AppRoutingModule,  
     ReactiveFormsModule
+    
   ],
   providers: [EmpService, ApiService, AuthguardGuard],
   bootstrap: [AppComponent]
