@@ -10,7 +10,7 @@ export class EmpService {
 
   getEmployees() {
     //return this._http.get("http://employeeerp.fusionbox.co.in/api/select.php/")
-    return this._http.get("http://localhost/angular2_crud_php_mysql_api-master/select.php/")
+    return this._http.get("http://employeeerp.fusionbox.co.in/api/select.php/")
     
       .map(res=>{
         this.checkMe = res;
@@ -22,22 +22,22 @@ export class EmpService {
   }
 
   addEmployee(info){
-    return this._http.post("http://localhost/angular2_crud_php_mysql_api-master/insert.php/",info)
+    return this._http.post("http://employeeerp.fusionbox.co.in/api/insert.php/",info)
       .map(()=>"");
   }
 
   getEmployee(id){
-    return this._http.post("http://localhost/angular2_crud_php_mysql_api-master/selectone.php/",{'id':id})
+    return this._http.post("http://employeeerp.fusionbox.co.in/api/selectone.php/",{'id':id})
       .map(res=>res.json());
   }
 
   deleteEmployee(id){
-    return this._http.post("http://localhost/angular2_crud_php_mysql_api-master/delete.php/",{'id':id})
+    return this._http.post("http://employeeerp.fusionbox.co.in/api/delete.php/",{'id':id})
       .map(()=>this.getEmployees());
   }
 
   updateEmployee(info){
-    return this._http.post("http://localhost/angular2_crud_php_mysql_api-master/update.php/", info)
+    return this._http.post("http://employeeerp.fusionbox.co.in/api/update.php/", info)
       .map(()=>"");
   }
   

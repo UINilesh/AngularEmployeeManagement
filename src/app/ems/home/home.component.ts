@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { EmpService } from '../../emp.service';
 import { Employee } from '../../employee';
 import { ApiService } from '../../loginservice/auth.service';
-import {ActivatedRoute, Params, Router} from '@angular/router';
-import { FilterPipe } from '../../searchdata/filter.pipe'
+import { ActivatedRoute, Params, Router} from '@angular/router';
+ 
+import {Subject} from 'rxjs/Subject';
 
 @Component({
   selector: 'app-home',
@@ -12,20 +13,26 @@ import { FilterPipe } from '../../searchdata/filter.pipe'
 })
 
 export class HomeComponent implements OnInit {
- 
+
+  // define select variable 
+  selectEmployeName = null;
+   
   
+   
   constructor(
     private _empService:EmpService,
     private router: Router, private dataService:ApiService
    ) {
 
-    }
- 
+  }
+  
 
   employees:any;
   
   ngOnInit() {
     this.getEmployees();
+
+    this.selectEmployeName;
   }
 
   getEmployees() {
@@ -43,5 +50,4 @@ export class HomeComponent implements OnInit {
         this.getEmployees();
       } )
   }
-
 }

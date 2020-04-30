@@ -1,6 +1,16 @@
 <app-navbar></app-navbar>
 <div class="dashboard">
 <div class="container">
+  
+  <div class="col-md-4">
+    <select name="filterName" class="form-control" [(ngModel)]="selectEmployeName">
+       <option [ngValue]="null">Filter Name</option>
+      <option *ngFor="let employee of employees">
+        {{ employee.name }}
+      </option>
+      </select>
+       
+  </div>
   <div class="col-md-4 pull-right">
     <input type="text" class="form-control" name="searchString"
     placeholder="Search Name Here..." [(ngModel)]="searchString">
@@ -21,10 +31,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of employees | filter : 'name' : searchString; let i = index">
+       <!--  <tr *ngFor="let employee of employees | filter : 'name' : searchString;  let i = index" > -->
+       
+          <tr *ngFor="let employee of employees | filterParent:'name':selectEmployeName">
+       
           <td>{{ employee.name }}</td>
           <td>{{ employee.position }}</td>
-          <td> {{ employee.dateofjoining }}</td>
+          <td>{{ employee.dateofjoining }}</td>
           <td>{{ employee.department }}</td>
           <td width="275">
             <a class="btn btn-info" routerLink="/show/{{ employee._id }}"

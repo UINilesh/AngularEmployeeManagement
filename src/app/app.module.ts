@@ -21,6 +21,8 @@ import { FooterComponent } from './footer/footer.component';
 // search data filter 
 import { FilterPipe } from './searchdata/filter.pipe'
 
+import { FilterParentPipe } from './searchdata/filter-parent.pipe'
+
 //bootstrap  date picker 
  
  
@@ -38,7 +40,8 @@ import { FilterPipe } from './searchdata/filter.pipe'
     RegisterComponent,
     DashboardComponent,
     FooterComponent,
-    FilterPipe
+    FilterPipe,
+    FilterParentPipe
   ],
   imports: [
     BrowserModule,
